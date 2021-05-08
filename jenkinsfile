@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('git') {
+            steps {
+                echo 'git'
+                git credentialsId: 'cba22d8b-8085-4b03-b669-edb6459c0b91', url: 'https://github.com/iamine1810/maven-java-sample-app.git'
+            }
+        }
+        stage('build') {
+            steps {
+                echo 'my build'
+            }
+        }
+    }
+}
+
